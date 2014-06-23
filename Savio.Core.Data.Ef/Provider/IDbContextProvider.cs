@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 
-namespace Savio.Core.Data.Ef
+namespace Savio.Core.Data.Ef.Provider
 {
     public interface IDbContextProvider<T> : IDisposable where T : class
     {

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Savio.Core.Data.Ef.Repository;
 
 namespace Savio.Core.Data.Ef.Test
 {
@@ -8,12 +10,13 @@ namespace Savio.Core.Data.Ef.Test
     public class EfRepositoryTests
     {
         [TestMethod]
-        public void EfRepository_Dispose_CallsDisposeOnDbContextProvider()
+        public void EfRepository_Dispose_ReleasesDbContext()
         {
-            var mockDbContextProvider = new Mock<IDbContextProvider<Object>>();
-            var efRepository = new EfRepository<Object>(mockDbContextProvider.Object);
+            var mockDbContext = new Mock<DbContext>();
+            var efRepository = new EfRepository<Object>(mockDbContext.Object);
             efRepository.Dispose();
-            mockDbContextProvider.Verify(m => m.Dispose());
+            Assert.IsNull(efRepository.DbContext);
+            Assert.IsNull(efRepository.DbSet);
         }
     }
 }
