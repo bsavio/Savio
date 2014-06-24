@@ -48,9 +48,9 @@
   <ItemGroup>
     <Compile Include="EfUnitOfWork.cs" />
     <Compile Include="IEfUnitOfWork.cs" />
-    <Compile Include="Provider\IEfRepositoryProvider.cs" />
+    <Compile Include="Repository\IEfRepositoryProvider.cs" />
     <Compile Include="Repository\EfRepository.cs" />
-    <Compile Include="Provider\IDbContextProvider.cs" />
+    <Compile Include="Repository\IDbContextProvider.cs" />
     <Compile Include="Repository\IEfReadOnlyRepository.cs" />
     <Compile Include="Repository\IEfRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

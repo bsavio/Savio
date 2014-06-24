@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.Entity;
-using Savio.Core.Data.Ef.Provider;
 using Savio.Core.Data.Ef.Repository;
 
 namespace Savio.Core.Data.Ef
